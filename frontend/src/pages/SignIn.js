@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "./assets/logo.png";
+
 
 function App() {
     return (
@@ -8,7 +8,7 @@ function App() {
                 {/* Left Section - Sign In Form */}
                 <div className="flex flex-col w-full md:w-1/2 px-4">
                     <div className="text-center mb-6">
-                        <img src={logo} alt="Kollabora logo" className="mx-auto mb-4" />
+                        <img src="https://placehold.co/100x50" alt="Kollabora logo" className="mx-auto mb-4" />
                         <h1 className="text-3xl font-bold text-gray-800">Sign in</h1>
                     </div>
                     <form className="space-y-4">
