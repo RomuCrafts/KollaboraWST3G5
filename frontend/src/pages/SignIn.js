@@ -20,7 +20,13 @@ const SignIn = () => {
                         <img src={logo} alt="Kollabora logo" style={{ width: "140px" }} />
                         <h1 className="text-2xl font-bold text-gray-800 mt-4">Sign in</h1>
                     </div>
-                    <form className="space-y-4">
+                    <form
+                        className="space-y-4"
+                        onSubmit={(e) => {
+                            e.preventDefault(); // Prevent form from reloading the page
+                            navigate("/AdminDash"); // Navigate to AdminDash
+                        }}
+                    >
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Email</label>
                             <input
@@ -38,7 +44,9 @@ const SignIn = () => {
                             />
                         </div>
                         <div className="text-right">
-                            <a href="#" className="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+                            <a href="#" className="text-sm text-blue-600 hover:underline">
+                                Forgot Password?
+                            </a>
                         </div>
                         <button
                             type="submit"
