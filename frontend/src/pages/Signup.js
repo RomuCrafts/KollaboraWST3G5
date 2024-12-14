@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import signup from "../assets/signup.png";
+import signuplogo from "../assets/signuplogo.png";
 
 const SignUp = () => {
     const navigate = useNavigate(); // Hook to handle navigation
@@ -15,7 +15,7 @@ const SignUp = () => {
                 {/* Left Section: Image */}
                 <div className="flex-shrink-0 md:mr-8">
                     <img
-                        src={signup}
+                        src={signuplogo}
                         alt="3D Illustration of Laptop with Charts"
                         className="max-w-lg w-full"
                         style={{ width: "1128px", height: "auto" }}
