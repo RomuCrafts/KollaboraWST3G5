@@ -5,6 +5,7 @@ import SignUp from './pages/Signup';
 import AdminDash from './pages/AdminDash';
 import UserProj from './pages/UserProj';
 import ProjectCard from './components/projectcard';
+import MemberTable from './pages/MemberTable';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/AdminDash" element={<AdminDash />} />
                 <Route path="/UserProj" element={<UserProj />} />
                 <Route path="/projectcard" element={<ProjectCard />} />
+                <Route path="/MemberTable" element={<MemberTable/>} />
             </Routes>
         </Router>
     );

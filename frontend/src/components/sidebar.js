@@ -38,13 +38,14 @@ const Sidebar = () => {
             </a>
           </li>
           <li className="mb-4">
-            <a
-              href="#"
-              className="flex items-center p-2 rounded hover:bg-gray-700"
-            >
-              <span className="mr-3">👥</span> Members
-            </a>
-          </li>
+  <button
+    onClick={() => navigate("/membertable")} // Navigate to Members page
+    className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
+  >
+    <span className="mr-3">👥</span> Members
+  </button>
+</li>
+
           <li className="mb-4">
             <a
               href="#"
