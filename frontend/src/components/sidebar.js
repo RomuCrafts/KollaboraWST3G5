@@ -59,7 +59,7 @@ const Sidebar = () => {
       </nav>
       <div className="mt-auto">
         <button
-          onClick={() => navigate("/SignIn")} 
+          onClick={() => navigate("/")} 
           className="flex items-center p-2 text-pink-500 hover:text-pink-700"
         >
           <span className="mr-3">🚪</span> Log Out

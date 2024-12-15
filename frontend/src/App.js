@@ -14,7 +14,7 @@ function App() {
         <Router>
             <Routes>
                 {/* Define unique paths for each component */}
-                <Route path="/SignIn" element={<SignIn />} />
+                <Route path="/" element={<SignIn />} />
                 <Route path="/Signup" element={<SignUp />} />
                 <Route path="/AdminDash" element={<AdminDash />} />
                 <Route path="/UserProj" element={<UserProj />} />
