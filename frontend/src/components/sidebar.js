@@ -14,12 +14,13 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li className="mb-4">
-            <a
+            <button
+            onClick={() => navigate("/AdminDash")}
               href="#"
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
               <span className="mr-3">📊</span> Dashboard
-            </a>
+            </button>
           </li>
           <li className="mb-4">
             <button
@@ -30,21 +31,21 @@ const Sidebar = () => {
             </button>
           </li>
           <li className="mb-4">
-            <a
-              href="#"
+            <button
+              onClick={() => navigate("/Task")} 
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
               <span className="mr-3">🗂️</span> Tasks
-            </a>
+            </button>
           </li>
           <li className="mb-4">
-  <button
-    onClick={() => navigate("/membertable")} // Navigate to Members page
-    className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
-  >
-    <span className="mr-3">👥</span> Members
-  </button>
-</li>
+        <button
+            onClick={() => navigate("/membertable")} 
+            className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
+        >
+        <span className="mr-3">👥</span> Members
+        </button>
+        </li>
 
           <li className="mb-4">
             <a
@@ -57,12 +58,13 @@ const Sidebar = () => {
         </ul>
       </nav>
       <div className="mt-auto">
-        <a
+        <button
+        onClick={() => navigate("/SignIn")} 
           href="#"
           className="flex items-center p-2 text-pink-500 hover:text-pink-700"
         >
           <span className="mr-3">🚪</span> Log Out
-        </a>
+        </button>
       </div>
     </aside>
   );
