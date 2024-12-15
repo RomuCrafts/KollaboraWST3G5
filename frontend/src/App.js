@@ -7,6 +7,7 @@ import UserProj from './pages/UserProj';
 import ProjectCard from './components/projectcard';
 import MemberTable from './pages/MemberTable';
 import Task from './pages/Task';
+import ProjReports from './pages/ProjReports'
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/projectcard" element={<ProjectCard />} />
                 <Route path="/MemberTable" element={<MemberTable/>} />
                 <Route path="/Task" element={<Task/>} />
+                <Route path='/ProjReports' element ={<ProjReports/>} />
             </Routes>
         </Router>
     );

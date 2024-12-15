@@ -48,19 +48,18 @@ const Sidebar = () => {
         </li>
 
           <li className="mb-4">
-            <a
-              href="#"
+            <button
+              onClick={() => navigate("/ProjReports")} 
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
               <span className="mr-3">📑</span> Project Reports
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
       <div className="mt-auto">
         <button
-        onClick={() => navigate("/SignIn")} 
-          href="#"
+          onClick={() => navigate("/SignIn")} 
           className="flex items-center p-2 text-pink-500 hover:text-pink-700"
         >
           <span className="mr-3">🚪</span> Log Out
