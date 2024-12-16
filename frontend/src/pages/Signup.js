@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import signuplogo from "../assets/signuplogo.png";
-import { register } from "../services/auth";
 import axios from "axios";
 
 const SignUp = () => {
@@ -10,16 +9,15 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // New state for show password functionality
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
+  const navigate = useNavigate(); // Hook to handle navigation
+
   const handleRegister = async (e) => {
     e.preventDefault();
-    console.log(e.target);
 
-    // const username = e.target.username.value;
-    // const email = e.target.email.value;
-    // const password = e.target.password.value;
-
-    const confirmPassword = e.target.confirmPassword.value;
     if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match.");
       return;
@@ -44,8 +42,6 @@ const SignUp = () => {
       );
     }
   };
-
-  const navigate = useNavigate(); // Hook to handle navigation
 
   return (
     <div
@@ -117,23 +113,43 @@ const SignUp = () => {
             </div>
             <div className="mb-4">
               <label className="block text-white mb-2">Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="At least 8 characters"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"} // Toggle visibility
+                  name="password"
+                  placeholder="At least 8 characters"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)} // Toggle visibility
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
             <div className="mb-4">
               <label className="block text-white mb-2">Confirm Password</label>
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="********"
-                className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
-              />
+              <div className="relative">
+                <input
+                  type={showConfirmPassword ? "text" : "password"} // Toggle visibility
+                  name="confirmPassword"
+                  placeholder="********"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)} // Toggle visibility
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white"
+                >
+                  {showConfirmPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
             <div className="mb-4 flex items-start">
               <input
