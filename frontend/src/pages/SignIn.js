@@ -15,8 +15,8 @@ const SignIn = () => {
     e.preventDefault(); // Prevent page refresh
 
     // Use the state variables directly
-    const email = email;
-    const password = password;
+    // const email = email;
+    // const password = password;
 
     console.log("Email:", email, "Password:", password);
 
