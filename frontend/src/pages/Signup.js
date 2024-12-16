@@ -18,6 +18,7 @@ const SignUp = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    // Check if passwords match
     if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match.");
       return;
@@ -37,14 +38,16 @@ const SignUp = () => {
       console.log("Registration response:", response.data);
     } catch (error) {
       console.error("Registration error:", error.response?.data || error);
-
-      // Specific errors to handle
+      
+      // Check for specific error responses from the backend
       if (error.response?.data?.error) {
-        if (error.response.data.error.includes("Username already taken")) {
+        if (error.response.data.error === "Username already taken") {
           setErrorMessage("Username already taken");
         } else {
           setErrorMessage("An unexpected error occurred. Please try again later.");
         }
+      } else {
+        setErrorMessage("An error occurred. Please try again.");
       }
     }
   };
@@ -179,7 +182,7 @@ const SignUp = () => {
             >
               Sign up
             </button>
-            {errorMessage && <p>{errorMessage}</p>}
+            {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
           </form>
           <div className="text-center mt-4">
             <p className="text-white">

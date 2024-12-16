@@ -11,10 +11,6 @@ def register(request):
         email = request.data.get('email')
         password = request.data.get('password')
 
-        # Bypass additional validation
-        if not username or not password:
-            raise ValidationError("Username and Password are required.")
-
         # Check if the username already exists
         if User.objects.filter(username=username).exists():
             return Response({'error': 'Username already taken'}, status=status.HTTP_400_BAD_REQUEST)
