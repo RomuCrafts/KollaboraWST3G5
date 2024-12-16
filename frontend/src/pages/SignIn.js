@@ -16,11 +16,16 @@ const SignIn = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    console.log("Email:", email, "Password:", password);
+
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login/", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/login/",
+        {
+          email,
+          password,
+        }
+      );
       console.log("Login successful:", response.data);
       localStorage.setItem("accessToken", response.data.access);
       localStorage.setItem("refreshToken", response.data.refresh);
@@ -55,8 +60,9 @@ const SignIn = () => {
               <input
                 type="email"
                 placeholder="Example@email.com"
+                name="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)} // Update state
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full px-4 py-2 bg-white bg-opacity-80 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               />
             </div>

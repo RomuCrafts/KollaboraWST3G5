@@ -4,6 +4,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 from .serializers import UserSerializer, RegisterSerializer
+from django.contrib.auth.models import User
+
 
 def get_tokens_for_user(user):
     refresh = RefreshToken.for_user(user)
@@ -13,6 +15,7 @@ def get_tokens_for_user(user):
     }
 
 class RegisterView(APIView):
+    permission_classes = [AllowAny] 
     def post(self, request):
         username = request.data.get('username')
         email = request.data.get('email')
@@ -26,6 +29,7 @@ class RegisterView(APIView):
 
 
 class LoginView(APIView):
+    permission_classes = [AllowAny] 
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')

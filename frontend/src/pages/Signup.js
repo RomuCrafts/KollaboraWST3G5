@@ -10,21 +10,32 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
   const handleRegister = async (e) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault();
     console.log(e.target);
 
-    const username = e.target.username.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    // const username = e.target.username.value;
+    // const email = e.target.email.value;
+    // const password = e.target.password.value;
+
+    const confirmPassword = e.target.confirmPassword.value;
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match.");
+      return;
+    }
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register/", {
-        username,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/register/",
+        {
+          username,
+          email,
+          password,
+        }
+      );
       alert("User registered successfully!");
+      navigate("/");
       console.log("Registration response:", response.data);
     } catch (error) {
       console.error("Registration error:", error.response?.data || error);
@@ -75,7 +86,10 @@ const SignUp = () => {
               <label className="block text-white mb-2">Full Name</label>
               <input
                 type="text"
+                name="fullName"
                 placeholder="First Last"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
               />
             </div>
@@ -105,7 +119,10 @@ const SignUp = () => {
               <label className="block text-white mb-2">Password</label>
               <input
                 type="password"
+                name="password"
                 placeholder="At least 8 characters"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
               />
             </div>
@@ -113,10 +130,8 @@ const SignUp = () => {
               <label className="block text-white mb-2">Confirm Password</label>
               <input
                 type="password"
-                name="password"
+                name="confirmPassword"
                 placeholder="********"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
               />
             </div>
