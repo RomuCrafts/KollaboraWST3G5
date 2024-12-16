@@ -37,9 +37,15 @@ const SignUp = () => {
       console.log("Registration response:", response.data);
     } catch (error) {
       console.error("Registration error:", error.response?.data || error);
-      setErrorMessage(
-        error.response?.data?.error || "An error occurred during registration."
-      );
+
+      // Specific errors to handle
+      if (error.response?.data?.error) {
+        if (error.response.data.error.includes("Username already taken")) {
+          setErrorMessage("Username already taken");
+        } else {
+          setErrorMessage("An unexpected error occurred. Please try again later.");
+        }
+      }
     }
   };
 
