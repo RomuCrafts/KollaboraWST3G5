@@ -1,35 +1,36 @@
 // pages/UserProj.js
 import React from "react";
 import Sidebar from "../components/sidebar";
-import ProjectCard from "../components/projectcard";
+// import ProjectCard from "../components/projectcard";
+import KanbanBoard from "../components/KanbanBoard.jsx";
 
 const UserProj = () => {
-  const projects = [
-    {
-      priority: "High",
-      title: "Project Alpha",
-      description: "A project focused on improving the user experience.",
-      users: 5,
-      comments: 12,
-      files: 3,
-    },
-    {
-      priority: "Medium",
-      title: "Project Beta",
-      description: "A project aimed at enhancing the security features.",
-      users: 8,
-      comments: 22,
-      files: 5,
-    },
-    {
-      priority: "Low",
-      title: "Project Gamma",
-      description: "A project working on backend performance optimization.",
-      users: 3,
-      comments: 7,
-      files: 1,
-    },
-  ];
+  // const projects = [
+  //   {
+  //     priority: "High",
+  //     title: "Project Alpha",
+  //     description: "A project focused on improving the user experience.",
+  //     users: 5,
+  //     comments: 12,
+  //     files: 3,
+  //   },
+  //   {
+  //     priority: "Medium",
+  //     title: "Project Beta",
+  //     description: "A project aimed at enhancing the security features.",
+  //     users: 8,
+  //     comments: 22,
+  //     files: 5,
+  //   },
+  //   {
+  //     priority: "Low",
+  //     title: "Project Gamma",
+  //     description: "A project working on backend performance optimization.",
+  //     users: 3,
+  //     comments: 7,
+  //     files: 1,
+  //   },
+  // ];
 
   return (
     <div className="flex h-screen">
@@ -51,8 +52,17 @@ const UserProj = () => {
             </div>
           </div>
         </header>
-
-        {/* Display Project Cards */}
+        <div
+          style={{
+            width: "300px",
+            padding: "20px",
+            backgroundColor: "#f4f4f4",
+            borderRadius: "8px",
+          }}
+        >
+          <KanbanBoard />
+        </div>
+        {/* Display Project Cards
         <section>
           {projects.map((project, index) => (
             <ProjectCard
@@ -65,7 +75,7 @@ const UserProj = () => {
               files={project.files}
             />
           ))}
-        </section>
+        </section> */}
       </main>
     </div>
   );
