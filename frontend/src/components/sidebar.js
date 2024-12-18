@@ -1,7 +1,7 @@
 // components/Sidebar.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png"; // Assuming you have the logo in assets
+import logo from "../assets/logo.png";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Sidebar = () => {
         <ul>
           <li className="mb-4">
             <button
-            onClick={() => navigate("/AdminDash")}
+              onClick={() => navigate("/AdminDash")}
               href="#"
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
@@ -32,24 +32,24 @@ const Sidebar = () => {
           </li>
           <li className="mb-4">
             <button
-              onClick={() => navigate("/Task")} 
+              onClick={() => navigate("/Task")}
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
               <span className="mr-3">🗂️</span> Tasks
             </button>
           </li>
           <li className="mb-4">
-        <button
-            onClick={() => navigate("/membertable")} 
-            className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
-        >
-        <span className="mr-3">👥</span> Members
-        </button>
-        </li>
+            <button
+              onClick={() => navigate("/membertable")}
+              className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
+            >
+              <span className="mr-3">👥</span> Members
+            </button>
+          </li>
 
           <li className="mb-4">
             <button
-              onClick={() => navigate("/ProjReports")} 
+              onClick={() => navigate("/ProjReports")}
               className="flex items-center p-2 rounded hover:bg-gray-700"
             >
               <span className="mr-3">📑</span> Project Reports
@@ -59,7 +59,7 @@ const Sidebar = () => {
       </nav>
       <div className="mt-auto">
         <button
-          onClick={() => navigate("/")} 
+          onClick={() => navigate("/")}
           className="flex items-center p-2 text-pink-500 hover:text-pink-700"
         >
           <span className="mr-3">🚪</span> Log Out

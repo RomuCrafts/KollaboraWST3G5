@@ -62,7 +62,7 @@ const UserProj = () => {
         >
           <KanbanBoard />
         </div>
-        {/* Display Project Cards
+        {/*
         <section>
           {projects.map((project, index) => (
             <ProjectCard

@@ -15,10 +15,6 @@ const SignUp = () => {
     e.preventDefault();
     console.log(e.target);
 
-    // const username = e.target.username.value;
-    // const email = e.target.email.value;
-    // const password = e.target.password.value;
-
     const confirmPassword = e.target.confirmPassword.value;
     if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match.");
@@ -45,7 +41,7 @@ const SignUp = () => {
     }
   };
 
-  const navigate = useNavigate(); // Hook to handle navigation
+  const navigate = useNavigate();
 
   return (
     <div
@@ -53,7 +49,7 @@ const SignUp = () => {
       style={{ backgroundColor: "#F9E3E3", position: "relative" }}
     >
       <div className="flex flex-col md:flex-row items-center justify-center max-w-5xl w-full p-4">
-        {/* Left Section: Image */}
+        {}
         <div className="flex-shrink-0 md:mr-8">
           <img
             src={signuplogo}
@@ -63,7 +59,7 @@ const SignUp = () => {
           />
         </div>
 
-        {/* Right Section: Form */}
+        {}
         <div
           className="p-8 rounded-lg shadow-lg w-full max-w-md"
           style={{
