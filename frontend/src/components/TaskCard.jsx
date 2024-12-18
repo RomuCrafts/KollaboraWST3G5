@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useDrag } from "react-dnd";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const Card = styled.div`
   background-color: #f5d0f9;

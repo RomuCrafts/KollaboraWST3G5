@@ -45,3 +45,16 @@ class LoginView(APIView):
             return Response(tokens, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Invalid email or password'}, status=status.HTTP_401_UNAUTHORIZED)
+
+# def index(request):
+#     labels = []
+#     data = []
+    
+#     queryset = Profile.objects.order_by('-name')[:5]
+#     for person in queryset:
+#         labels.append(person.name)
+#         data.append(person.name)
+#     return render(request,index.html,{
+#         'labels': labels,
+#         'data': data
+#     })

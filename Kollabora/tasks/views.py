@@ -2,6 +2,10 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Task
 from .serializers import TaskSerializer
+from rest_framework.views import APIView
+from rest_framework.generics import RetrieveUpdateAPIView
+from rest_framework.response import Response
+from rest_framework import status
 
 # Create your views here.
 # class TaskListCreateView(generics.ListCreateAPIView):
@@ -25,3 +29,8 @@ class TaskListView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class TaskDetailView(RetrieveUpdateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    lookup_field = 'id'
+    

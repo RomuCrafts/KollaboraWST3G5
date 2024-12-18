@@ -2,7 +2,7 @@
 import React from "react";
 import Sidebar from "../components/sidebar";
 // import ProjectCard from "../components/projectcard";
-import KanbanBoard from "../components/KanbanBoard.jsx";
+import KanbanBoard from "../components/KanbanBoard";
 
 const UserProj = () => {
   // const projects = [
@@ -54,7 +54,7 @@ const UserProj = () => {
         </header>
         <div
           style={{
-            width: "300px",
+            width: "700px",
             padding: "20px",
             backgroundColor: "#f4f4f4",
             borderRadius: "8px",

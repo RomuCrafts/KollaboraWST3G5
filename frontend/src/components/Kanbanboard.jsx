@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useDrop } from "react-dnd";
 import TaskCard from "./TaskCard";
 import { fetchTasks, updateTask } from "../api";
+import axios from "axios";
 
 const BoardContainer = styled.div`
   display: flex;
@@ -34,7 +35,6 @@ const KanbanBoard = () => {
     );
   };
 
-  // Instead of calling useDrop inside renderColumn, call it inside the main component and pass it as props to the columns
   const [{ isOver: isOverBacklog }, dropRefBacklog] = useDrop(() => ({
     accept: "TASK",
     drop: (item) => moveTask(item.id, "backlog"),
